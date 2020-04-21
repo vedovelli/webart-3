@@ -1,16 +1,16 @@
 import { SET_MOVIES, RESET_MOVIES } from "./types";
 import { fetchMovies as apiFetchMovies } from "@/api/movie-api";
 
-export const fetchMovies = async ({ dispatch }, term) => {
+export const fetchMovies = async ({ commit }, term) => {
   const {
-    data: { movies },
+    data: { results: movies },
   } = await apiFetchMovies(term);
 
-  dispatch(SET_MOVIES, { movies });
+  commit(SET_MOVIES, { movies });
 };
 
-export const resetMovies = ({ dispatch }) => {
-  dispatch(RESET_MOVIES);
+export const resetMovies = ({ commit }) => {
+  commit(RESET_MOVIES);
 };
 
 export default { fetchMovies, resetMovies };

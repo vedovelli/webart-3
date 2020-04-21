@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Movies from "@/store/modules/Movies";
+import Movies from "@/store/Movies";
 
 Vue.use(Vuex);
 

@@ -1,6 +1,24 @@
+<script>
+import { mapActions } from "vuex";
+
+export default {
+  data() {
+    return {
+      term: "",
+    };
+  },
+  methods: {
+    ...mapActions("Movies", ["fetchMovies"]),
+  },
+};
+</script>
+
 <template>
   <div class="mt-3">
-    <form class="flex mx-2 mt-1 rounded-md shadow-sm xl:w-1/2 md:mx-auto">
+    <form
+      @submit.prevent="fetchMovies(term)"
+      class="flex mx-2 mt-1 rounded-md shadow-sm xl:w-1/2 md:mx-auto"
+    >
       <div class="relative flex-grow focus-within:z-10">
         <div
           class="absolute inset-y-0 left-0 flex items-center pl-3
@@ -18,7 +36,7 @@
           </svg>
         </div>
         <input
-          bind:value="{term}"
+          v-model="term"
           type="search"
           class="block w-full pl-10 transition duration-150 ease-in-out
         rounded-none form-input rounded-l-md sm:text-sm sm:leading-5"
