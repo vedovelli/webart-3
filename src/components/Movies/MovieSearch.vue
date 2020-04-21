@@ -8,7 +8,14 @@ export default {
     };
   },
   methods: {
-    ...mapActions("Movies", ["fetchMovies"]),
+    ...mapActions("Movies", ["fetchMovies", "resetMovies"]),
+  },
+  watch: {
+    term() {
+      if (this.term === "") {
+        this.resetMovies();
+      }
+    },
   },
 };
 </script>
