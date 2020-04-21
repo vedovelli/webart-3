@@ -1,8 +1,10 @@
 <script>
 import MovieCard from "@/components/Movies/MovieCard";
+import { mapGetters } from "vuex";
 
 export default {
   components: { MovieCard },
+  computed: mapGetters("Movies", ["movies"]),
 };
 </script>
 
@@ -14,10 +16,12 @@ export default {
     </h3> -->
       <ul class="m-0 xl:grid xl:grid-cols-2">
         <li
+          v-for="movie in movies"
+          :key="movie.id"
           class="p-1 mx-0 my-3 bg-white shadow cursor-pointer xl:mx-3
           sm:rounded-lg xl:justify-between"
         >
-          <MovieCard />
+          <MovieCard :movie="movie" />
         </li>
       </ul>
     </main>

@@ -1,3 +1,20 @@
+<script>
+import { BACKDROP_BASE_URL } from "@/api/movie-api";
+export default {
+  data() {
+    return {
+      backdropBaseUrl: BACKDROP_BASE_URL,
+    };
+  },
+  props: {
+    movie: {
+      type: Object,
+      required: true,
+    },
+  },
+};
+</script>
+
 <template>
   <div class="p-4">
     <div class="flex flex-col md:flex-row">
@@ -5,8 +22,9 @@
         <img
           loading="lazy"
           class="rounded-lg md:w-56 md:rounded"
-          src="jOzrELAzFxtMx2I4uDGHOotdfsS.jpg"
-          alt="Woman paying for a purchase"
+          :src="`${backdropBaseUrl}/${movie.backdrop_path}`"
+          :alt="movie.title"
+          :title="movie.title"
         />
       </div>
       <div class="w-full md:ml-6">
@@ -14,20 +32,18 @@
           class="mt-3 text-sm font-bold tracking-wide text-red-600 uppercase
         md:mt-0"
         >
-          STAR WARS: THE RISE OF SKYWALKER ({quantity})
+          {{ movie.title }}
         </div>
         <div class="flex p-2 my-2 text-xs text-gray-500 bg-gray-100 rounded">
           <p class="w-full">
             Avaliação:
-            <strong>6.5</strong>
-            com 3834 votos
+            <strong>{{ movie.vote_average }}</strong>
+            com {{ movie.vote_count }} votos
           </p>
-          <p class="w-full text-right">Lançamento: 18/12/2019</p>
+          <p class="w-full text-right">Lançamento: {{ movie.release_date }}</p>
         </div>
         <p class="mt-2 text-sm text-gray-500">
-          The surviving Resistance faces the First Order once again as the
-          journey of Rey, Finn and Poe Dameron continues. With the power and
-          knowledge of generations behind them, the final battle begins.
+          {{ movie.overview }}
         </p>
       </div>
     </div>
