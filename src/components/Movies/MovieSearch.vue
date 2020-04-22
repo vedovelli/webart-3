@@ -23,6 +23,7 @@ export default {
 <template>
   <div class="mt-3">
     <form
+      data-testid="search-form"
       @submit.prevent="fetchMovies(term)"
       class="flex mx-2 mt-1 rounded-md shadow-sm xl:w-1/2 md:mx-auto"
     >
@@ -42,6 +43,7 @@ export default {
           </svg>
         </div>
         <input
+          data-testid="search-input"
           v-model="term"
           type="search"
           class="block w-full pl-10 transition duration-150 ease-in-out rounded-none form-input rounded-l-md sm:text-sm sm:leading-5"
