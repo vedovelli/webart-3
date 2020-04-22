@@ -4,11 +4,8 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      term: "movie1",
+      term: "",
     };
-  },
-  mounted() {
-    this.fetchMovies(this.term);
   },
   methods: {
     ...mapActions("Movies", ["fetchMovies", "resetMovies"]),
