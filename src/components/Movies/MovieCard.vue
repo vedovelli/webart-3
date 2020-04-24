@@ -27,8 +27,8 @@ export default {
         <img
           class="rounded-lg md:w-56 md:rounded"
           :src="`${backdropBaseUrl}/${movie.backdrop_path}`"
-          :alt="movie.title"
-          :title="movie.title"
+          :alt="`Poster: ${movie.title}`"
+          :title="`Poster: ${movie.title}`"
         />
       </div>
       <div class="w-full md:ml-6">
