@@ -1,12 +1,12 @@
 <script>
-import MovieCard from "@/components/Movies/MovieCard";
-import { mapState, mapGetters } from "vuex";
+import MovieCard from '@/components/Movies/MovieCard';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   components: { MovieCard },
   computed: {
-    ...mapState("Movies", ["wasSearched"]),
-    ...mapGetters("Movies", ["movies"]),
+    ...mapState('Movies', ['wasSearched']),
+    ...mapGetters('Movies', ['movies']),
     hasMovies() {
       return !!this.movies.length;
     },
@@ -26,11 +26,12 @@ export default {
       </h3>
       <ul data-testid="movie-list" v-else class="m-0 xl:grid xl:grid-cols-2">
         <li
+          data-testid="movie"
           v-for="movie in movies"
           :key="movie.id"
           class="p-1 mx-0 my-3 bg-white shadow cursor-pointer xl:mx-3 sm:rounded-lg xl:justify-between"
         >
-          <MovieCard data-testid="movie-card" :movie="movie" />
+          <MovieCard :movie="movie" />
         </li>
       </ul>
     </main>

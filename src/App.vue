@@ -1,5 +1,5 @@
 <script>
-import Movies from "@/components/Movies/Movies";
+import Movies from '@/components/Movies/Movies';
 
 export default {
   components: { Movies },
