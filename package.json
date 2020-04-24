@@ -6,8 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "cypress": "cypress open"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@tailwindcss/ui": "^0.1.3",
