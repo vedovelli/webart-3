@@ -1,5 +1,5 @@
 <script>
-import { BACKDROP_BASE_URL } from "@/api/movie-api";
+import { BACKDROP_BASE_URL } from '@/api/movie-api';
 export default {
   data() {
     return {
@@ -25,7 +25,6 @@ export default {
     <div class="flex flex-col md:flex-row">
       <div class="flex-shrink-0">
         <img
-          loading="lazy"
           class="rounded-lg md:w-56 md:rounded"
           :src="`${backdropBaseUrl}/${movie.backdrop_path}`"
           :alt="movie.title"
@@ -33,9 +32,7 @@ export default {
         />
       </div>
       <div class="w-full md:ml-6">
-        <div
-          class="mt-3 text-sm font-bold tracking-wide text-red-600 uppercase md:mt-0"
-        >
+        <div class="mt-3 text-sm font-bold tracking-wide text-red-600 uppercase md:mt-0">
           {{ movie.title }}
         </div>
         <div class="flex p-2 my-2 text-xs text-gray-500 bg-gray-100 rounded">

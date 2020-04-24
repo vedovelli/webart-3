@@ -1,6 +1,6 @@
-import { API_KEY, http } from "./http";
+import { API_KEY, http } from './http';
 
-export const BACKDROP_BASE_URL = "https://image.tmdb.org/t/p/original";
+export const BACKDROP_BASE_URL = 'https://image.tmdb.org/t/p/original';
 
 /**
  * Este método consulta a API de filmes e retorna uma lista
